@@ -1,0 +1,28 @@
+body {
+  max-width: 800px;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'EB Garamond', serif;
+}
+
+.header {
+  height: 100px;
+  width: 100%;
+  vertical-align: middle;
+  display: flex;
+  border-bottom: 1px solid gray;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.site-title {
+  font-size: 2em;
+}
+
+.header, .content {
+  padding: 0px 10px;
+}
+  
