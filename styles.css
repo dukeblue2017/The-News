@@ -1,28 +1,52 @@
 body {
-  max-width: 800px;
+  max-width: 1000px;
   margin: auto;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: 'EB Garamond', serif;
 }
 
 .header {
-  height: 100px;
+  height: 140px;
   width: 100%;
   vertical-align: middle;
   display: flex;
   border-bottom: 1px solid gray;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 .site-title {
-  font-size: 2em;
+  font-size: 60px;
+}
+
+.date {
+  font-size: 20px;
+  font-style: italic;
 }
 
 .header, .content {
-  padding: 0px 10px;
+  margin: 0px 10px;
 }
   
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.column {
+  margin: 0px 30px;
+  flex-basis: 33.33333333%;
+}
+
+.content-header {
+  font-size: 25px;
+  text-align: center;
+  margin: 10px 0px;
+}
+
+.story-title {
+  font-size: 20px;
+}
