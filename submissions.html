@@ -1,8 +1,21 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html>
     <head>
+      <link rel="stylesheet" href="submissions.css">
     </head>
     <body>
-      <form>this is a form</form>
+      <form action="/submissions" method="POST">
+        Original Title
+        <input type="text" name="originalTitle">
+        Our Title
+        <input type="text" name="ourTitle">
+        URL
+        <input type="text" name="URL">
+        Rank
+        <input type="text" name="rank">
+        Date (YYYYMMDD)
+        <input type="text" name="date">
+        <input type="submit">
+      </form>
     </body>
 </html>
