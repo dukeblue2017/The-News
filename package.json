@@ -2,7 +2,7 @@
   "scripts": {
     "start": "node server.js"
   },
-  "name": "The News",
+  "name": "TheNews",
   "version": "",
   "dependencies": {
     "body-parser": "^1.18.2",
