@@ -29,6 +29,7 @@ body {
 .content {
   display: flex;
   flex-direction: row;
+  text-align: justify;
 }
 
 .column {
