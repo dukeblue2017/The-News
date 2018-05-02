@@ -21,8 +21,8 @@ app.use(express.static(path.join(__dirname, '')));
 
 app.listen(3000, () => console.log('Listening on port 3000'));
 
-app.get('/submissions', (req, res) => {
-})
+// app.get('/submissions', (req, res) => {
+// })
 
 app.post('/submissions', (req, res) => {
   knex('articles').insert({
@@ -39,7 +39,9 @@ app.post('/submissions', (req, res) => {
 })
 
 app.get('/stories', (req, res) => {
-  knex.select().from('articles').where({
-    
-  })
+  knex.raw('SELECT originalTitle, rank FROM articles WHERE date = CURDATE()')
+    .then((DBres) => {
+      console.log(DBres)
+      res.send(DBres[0])
+    })  
 })
