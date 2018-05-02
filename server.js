@@ -25,7 +25,6 @@ app.get('/submissions', (req, res) => {
 })
 
 app.post('/submissions', (req, res) => {
-  console.log(req.body);
   knex('articles').insert({
     originalTitle: req.body.originalTitle,
     ourTitle: req.body.ourTitle,
@@ -36,5 +35,11 @@ app.post('/submissions', (req, res) => {
     res.send('Successfully submitted.');
   }).catch( (err) => {
     res.send('Error in submission.')
+  })
+})
+
+app.get('/stories', (req, res) => {
+  knex.select().from('articles').where({
+    
   })
 })
