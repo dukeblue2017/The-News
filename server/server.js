@@ -21,12 +21,8 @@ app.use(express.static(path.join(__dirname, '../client/public')));
 
 app.listen(3000, () => console.log('Listening on port 3000'));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/homepage.html'));
-})
-
 app.get('/submissions', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/submissions.html'));
+  res.sendFile(path.join(__dirname, '../client/public/submissions.html'));
 })
 
 app.post('/submissions', (req, res) => {
@@ -36,6 +32,7 @@ app.post('/submissions', (req, res) => {
     URL: req.body.URL,
     rank: req.body.rank,
     date: req.body.date,
+    column: req.body.column
   }).then( (success) => {
     res.send('Successfully submitted.');
   }).catch( (err) => {
@@ -44,7 +41,7 @@ app.post('/submissions', (req, res) => {
 })
 
 app.get('/stories', (req, res) => {
-  knex.raw('SELECT originalTitle, rank FROM articles WHERE date = CURDATE()')
+  knex.raw('SELECT originalTitle, `column` FROM articles WHERE date = CURDATE()')
     .then((DBres) => {
       res.send(DBres[0]);
     })
