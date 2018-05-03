@@ -17,15 +17,12 @@ const knex = require('knex')({
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, '../client/public')));
 
 app.listen(3000, () => console.log('Listening on port 3000'));
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/homepage.html'));
-})
-
-app.get('/styles.css', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/styles.css'))
 })
 
 app.get('/submissions', (req, res) => {
