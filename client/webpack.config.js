@@ -9,7 +9,7 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        options: { presets: ['env'] }
+        options: { presets: ['es2015', 'react'] }
       },
       {
         test: /\.css$/,
@@ -20,7 +20,6 @@ module.exports = {
   resolve: { extensions: ['*', '.js', '.jsx'] },
   output: {
     path: path.join(__dirname, "./build"),
-    publicPath: '/test',
     filename: "bundle.js"
   },
   devServer: {
