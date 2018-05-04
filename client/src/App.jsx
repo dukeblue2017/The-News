@@ -15,7 +15,7 @@ class App extends Component{
   }
 
   componentDidMount() {
-    axios.get('/stories')
+    axios.get('http://localhost:3000/stories')
       .then((res) => {
         this.setState({
           articles: res.data,
