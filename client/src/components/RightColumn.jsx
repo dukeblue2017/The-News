@@ -18,9 +18,9 @@ class RightColumn extends Component{
 
   render(){
     return(
-      <div class="column right-column">
+      <div className="column right-column">
         {this.state.rightArticles.map((article) => {
-          return <Story title={article.ourTitle||article.originalTitle} />
+          return <Story title={article.ourTitle||article.originalTitle} key={article.ourTitle||article.originalTitle} />
         })}
       </div>
     );

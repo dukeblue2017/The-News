@@ -26,11 +26,11 @@ class App extends Component{
   render(){
     return(
       <div className="App">
-        <div class="header">
-          <div class="site-title">The News</div>
-          <div class="date">The Day of April 25, 2018</div>
+        <div className="header">
+          <div className="site-title">The News</div>
+          <div className="date">The Day of April 25, 2018</div>
         </div>
-        <div class="content">
+        <div className="content">
           <LeftColumn articles={this.state.articles}/>
           <MiddleColumn articles={this.state.articles}/>
           <RightColumn articles={this.state.articles}/>

@@ -7,9 +7,9 @@ class Story extends Component{
 
   render(){
     return(
-      <div class="story">
-        <div class="story-title">{this.props.title}</div>
-        <div class="story-text">
+      <div className="story">
+        <div className="story-title">{this.props.title}</div>
+        <div className="story-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

@@ -18,10 +18,10 @@ class MiddleColumn extends Component{
 
   render(){
     return(
-      <div class="column middle-column">
-        <div class="content-header">Story of the Day</div>
+      <div className="column middle-column">
+        <div className="content-header">Story of the Day</div>
         {this.state.middleArticles.map((article) => {
-          return <Story title={article.ourTitle||article.originalTitle} />
+          return <Story title={article.ourTitle||article.originalTitle} key={article.ourTitle||article.originalTitle} />
         })}
       </div>
     );
