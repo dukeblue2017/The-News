@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const dotenv = require('dotenv').config({
   path: 'env.env'
 });
@@ -15,10 +16,10 @@ const knex = require('knex')({
   }
 });
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '../client/public')));
-// dangerous line below
 app.use(express.static(path.join(__dirname, '../client/build')));
 
 app.listen(3000, () => console.log('Listening on port 3000'));
