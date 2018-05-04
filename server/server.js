@@ -18,6 +18,8 @@ const knex = require('knex')({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '../client/public')));
+// dangerous line below
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 app.listen(3000, () => console.log('Listening on port 3000'));
 
