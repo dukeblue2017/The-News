@@ -1,28 +1,23 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import Story from './Story';
 
-class MiddleColumn extends Component{
+class MiddleColumn extends Component {
+  static getDerivedStateFromProps(nextProps) {
+    const middleArticles = nextProps.articles.filter(article => article.column === 'middle');
+    return { middleArticles };
+  }
+
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       middleArticles: [],
-    }
+    };
   }
 
-  static getDerivedStateFromProps(nextProps) {
-    const middleArticles = nextProps.articles.filter( (article) => {
-      return article.column === 'middle'
-    })
-    return {'middleArticles': middleArticles};
-  }
-
-  render(){
-    return(
+  render() {
+    return (
       <div className="column middle-column">
-        <div className="content-header">Story of the Day</div>
-        {this.state.middleArticles.map((article) => {
-          return <Story title={article.ourTitle||article.originalTitle} URL={article.URL} key={article.ourTitle||article.originalTitle} />
-        })}
+        {this.state.middleArticles.map(article => <Story title={article.ourTitle || article.originalTitle} URL={article.URL} key={article.ourTitle || article.originalTitle} />)}
       </div>
     );
   }
