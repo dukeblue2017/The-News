@@ -20,7 +20,7 @@ class LeftColumn extends Component{
     return(
       <div className="column left-column">
         {this.state.leftArticles.map((article) => {
-          return <Story title={article.ourTitle||article.originalTitle} key={article.ourTitle||article.originalTitle} />
+          return <Story title={article.ourTitle||article.originalTitle} URL={article.URL} key={article.ourTitle||article.originalTitle} />
         })}
       </div>
     );
