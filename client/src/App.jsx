@@ -15,12 +15,21 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/stories')
-      .then((res) => {
-        this.setState({
-          articles: res.data,
-        });
+    const dateObj = new Date();
+    const myDate = {
+      year: dateObj.getFullYear().toString(),
+      month: (dateObj.getMonth() + 1).toLocaleString('en-us', { minimumIntegerDigits: 2 }),
+      day: dateObj.getDate().toLocaleString('en-us', { minimumIntegerDigits: 2 }),
+    };
+    const dateString = `${myDate.year}${myDate.month}${myDate.day}`;
+    axios({
+      method: 'GET',
+      url: `http://localhost:3000/stories?date=${dateString}`,
+    }).then((res) => {
+      this.setState({
+        articles: res.data,
       });
+    });
   }
 
   render() {

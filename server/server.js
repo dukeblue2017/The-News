@@ -39,13 +39,13 @@ app.post('/submissions', (req, res) => {
     column: req.body.column,
   }).then(() => {
     res.send('Successfully submitted.');
-  }).catch((err) => {
+  }).catch(() => {
     res.send('Error in submission.');
   });
 });
 
 app.get('/stories', (req, res) => {
-  knex.raw('SELECT originalTitle, `column`, URL FROM articles WHERE date = CURDATE()')
+  knex.raw(`SELECT originalTitle, \`column\`, URL FROM articles WHERE date = ${req.query.date}`)
     .then((DBres) => {
       res.send(DBres[0]);
     })
