@@ -1,12 +1,13 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import Story from './components/Story';
 import axios from 'axios';
 import LeftColumn from './components/LeftColumn';
 import MiddleColumn from './components/MiddleColumn';
 import RightColumn from './components/RightColumn';
+import Header from './components/Header';
 
-class App extends Component{
+class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -26,10 +27,7 @@ class App extends Component{
   render(){
     return(
       <div className="App">
-        <div className="header">
-          <div className="site-title">The News</div>
-          <div className="date">The Day of April 25, 2018</div>
-        </div>
+        <Header />
         <div className="content">
           <LeftColumn articles={this.state.articles}/>
           <MiddleColumn articles={this.state.articles}/>
