@@ -4,7 +4,7 @@ function Story(props) {
   return (
     <div className="story">
       <div className="story-title">
-        <a href={props.URL}>{props.title}</a>
+        <a href={props.URL} target="_blank">{props.title}</a>
       </div>
       <div className="story-text">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

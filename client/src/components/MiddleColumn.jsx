@@ -17,6 +17,7 @@ class MiddleColumn extends Component {
   render() {
     return (
       <div className="column middle-column">
+        <div className="content-header">Story of the Day</div>
         {this.state.middleArticles.map(article => <Story title={article.ourTitle || article.originalTitle} URL={article.URL} key={article.ourTitle || article.originalTitle} />)}
       </div>
     );
