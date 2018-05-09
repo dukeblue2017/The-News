@@ -75,24 +75,35 @@ a:active {
   .header {
     margin-bottom: 10px;
   }
+  
   .content {
     flex-direction: column;
   }
+  
   .column {
     margin: 0px 0px;
   }
+  
   .left-column {
     order: 2;
   }
+  
   .middle-column {
     order: 1;
   }
+  
   .right-column {
     order: 3;
   }
+  
   .story {
     margin-bottom: 20px;
   }
+  
+  .story-title {
+    text-align: center;
+  }
+  
   body {
     max-width: 400px;
   }
