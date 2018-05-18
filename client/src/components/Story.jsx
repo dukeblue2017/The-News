@@ -1,10 +1,13 @@
 import React from 'react';
 
 function Story(props) {
+  let newTitle = props.title.split(' ');
+  const lastTitleWord = newTitle.pop();
+  newTitle = newTitle.join(' ')
   return (
     <div className="story">
       <div className="story-title">
-        <a href={props.URL} target="_blank">{props.title}</a>
+        <a href={props.URL} target="_blank">{newTitle}&nbsp;{lastTitleWord}</a>
       </div>
       <div className="story-text">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
